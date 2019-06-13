@@ -1,0 +1,7 @@
+Parts:
+- Arduino Nano
+- Led (in switch)
+- Klok
+- Knop
+- RTC
+- Zoemer
