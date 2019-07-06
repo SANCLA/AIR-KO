@@ -1,12 +1,7 @@
-/* name      : clock_4d_led_01_1.ino
-   purpose   : Clock with 4 digit LED display (TM1637), using Arduino and RTC DS1307
-   author    : LZ2WSG Veselin Georgiev
-   site      : http://kn34pc.com/construct/lz2wsg_arduino_clock_4d_led.html
-   date      : 2-12-2018
-   revision  : v1.01.1
-   used info : http://www.manelsoft.com/projects/arduino_ds1307_clock.aspx
-             : http://playground.arduino.cc/Main/TM1637
-             : http://www.ad7c.com/projects/ad9850-dds-vfo/
+/* 
+Project   :   AIR-KO
+Author    :   SANCLA Sander Claassen
+Site      :   https://github.com/SANCLA/AIR-KO
   ---------------------------------------------------------------------------------------------------------*/
 // meh
 
