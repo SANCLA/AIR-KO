@@ -1,9 +1,9 @@
 # PROJECT DETAILS #
 Project Name: AIR-K.O.
 
-Version: 0.2 ALPHA
+Version: 0.03 ALPHA
 
-Date: 5-7-2019
+Date: 6-7-2019
 
 Author(s): Sander Claassen
 
@@ -22,19 +22,19 @@ Goals:
 
 # Status
 
-| Part                                   | Status            | Remarks |
-| -------------------------------------- | ----------------- | ------- |
-| Visual concept                         | Done              |         |
-| Order all parts                        | Done              |         |
-| Arduino Nano                           | Working prototype |         |
-| Clock display 4 segment                | Working prototype |         |
-| RTC module                             | Working prototype |         |
-| Buttons to adjust the time             | To do             |         |
-| Red warning led                        | To do             |         |
-| Button to acknowledge the alarm        | To do             |         |
-| Buzzer                                 | To do             |         |
-| Way to adjust the volume of the buzzer | To do             |         |
-| Box to put it all into                 | To do             |         |
+| Part                                   | Status            | Remarks                                                      |
+| -------------------------------------- | ----------------- | ------------------------------------------------------------ |
+| Visual concept                         | Done              |                                                              |
+| Order all parts                        | Done              |                                                              |
+| Arduino Nano                           | Working prototype |                                                              |
+| Clock display 4 segment                | Working prototype |                                                              |
+| RTC module                             | Working prototype |                                                              |
+| Buttons to adjust the time             | To do             |                                                              |
+| Red warning led                        | To do             |                                                              |
+| Button to acknowledge the alarm        | To do             |                                                              |
+| Buzzer                                 | Working prototype | Powered by arduino<br />needs a transistor transistor <br />PN2222 with 2k2 resistor<br />or a BC548 with a 1K resistor |
+| Way to adjust the volume of the buzzer | To do             |                                                              |
+| Box to put it all into                 | To do             |                                                              |
 
 
 

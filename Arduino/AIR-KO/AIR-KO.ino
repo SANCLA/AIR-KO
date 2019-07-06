@@ -16,6 +16,7 @@
 
 #define CLK 2                         // TM1637 pin CLK
 #define DIO 3                         // TM1637 pin DIO
+#define buzzer 8                      // Buzzer / continuous beep
 
 TM1637 tm1637(CLK, DIO);
 RTC_DS1307 RTC;                       // RTC DS1307 use SDA(A4) and SCL(A5) pins
@@ -29,11 +30,16 @@ void setup()
   Wire.begin();                       // Initiate the Wire library and join the I2C bus
 
   pinMode(13, OUTPUT);
+  pinMode(buzzer, OUTPUT);
   Serial.begin(115200);
      Serial.println("Serial I AM OK!!!"); // so I can keep track of what is loaded
 
   RTC.begin();                        // Initiate the RTC library
 //  RTC.adjust(DateTime(__DATE__, __TIME__));
+ if(!RTC.isrunning())
+ {
+ RTC.adjust(DateTime(__DATE__,__TIME__));
+ }
 
   tm1637.init();
   tm1637.set(BRIGHTEST);              // BRIGHT_TYPICAL = 2, BRIGHT_DARKEST = 0, BRIGHTEST = 7
@@ -64,4 +70,13 @@ void loop()
   dp = !dp;                           // time refresh (and digital points blink) 0,5 every sec
   
   delay(500);
+  
+if(h == 15 && m == 27) 
+  {
+   digitalWrite(buzzer,HIGH);
+  }else
+  {
+   digitalWrite(buzzer,LOW);
+  }
+  
 }
