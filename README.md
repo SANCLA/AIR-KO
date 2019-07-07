@@ -1,9 +1,9 @@
 # PROJECT DETAILS #
 Project Name: AIR-K.O.
 
-Version: 0.03 ALPHA
+Version: 0.04 ALPHA
 
-Date: 6-7-2019
+Date: 7-7-2019
 
 Author(s): Sander Claassen
 
@@ -29,9 +29,9 @@ Goals:
 | Arduino Nano                           | Working prototype |                                                              |
 | Clock display 4 segment                | Working prototype |                                                              |
 | RTC module                             | Working prototype |                                                              |
-| Buttons to adjust the time             | To do             |                                                              |
-| Red warning led                        | To do             |                                                              |
-| Button to acknowledge the alarm        | To do             |                                                              |
+| Buttons to adjust the time             | Working prototype |                                                              |
+| Red warning led                        | Working prototype |                                                              |
+| Button to acknowledge the alarm        | Working prototype |                                                              |
 | Buzzer                                 | Working prototype | Powered by arduino<br />needs a transistor transistor <br />PN2222 with 2k2 resistor<br />or a BC548 with a 1K resistor |
 | Way to adjust the volume of the buzzer | To do             |                                                              |
 | Box to put it all into                 | To do             |                                                              |
