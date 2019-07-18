@@ -9,21 +9,21 @@ Site      :   https://github.com/SANCLA/AIR-KO
 #include "RTClib.h"                   // https://github.com/adafruit/RTClib
 #include "TM1637.h"                   // https://github.com/avishorp/TM1637
 
-#define ALARMH 18
-#define ALARMM 39
+#define ALARMH 17
+#define ALARMM 00
 
-#define CLK 2                         // TM1637 pin CLK
-#define DIO 3                         // TM1637 pin DIO
-#define buzzer 4                      // Buzzer / continuous beep
+#define CLK 2                         // TM1637 pin CLK (CLOCK DISPLAY)
+#define DIO 3                         // TM1637 pin DIO (CLOCK DISPLAY)
+#define buzzer 10                      // Buzzer / continuous beep
 #define LedAlarm 5                    // Alarm LED (integrated in button)
-#define SW_HOUR A0                     // Button to adjust time, hour++
-#define SW_MIN A1                     // Button to adjust time, minute++
-#define LedAlarmOK 10                   // Alarm LED (integrated in button)
+#define SW_HOUR A1                     // Button to adjust time, hour++
+#define SW_MIN A2                     // Button to adjust time, minute++
+#define LedAlarmOK 4                   // Alarm LED (integrated in button)
 int BtnAlarmOff = 6; 
 int BtnAlarmOffState = 0;
 int AlarmAcknowledged;
 
-
+//Stroom: lang = neg, kort = posm    0
 
 TM1637 tm1637(CLK, DIO);
 RTC_DS1307 RTC;                                  // RTC DS1307 use SDA(A4) and SCL(A5) pins
