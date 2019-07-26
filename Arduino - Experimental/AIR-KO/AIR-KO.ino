@@ -39,6 +39,7 @@ uint8_t m;                                       // minutes
 uint8_t h;                                       // hours
 uint8_t tmp;                                     // Temporary variable to adjust the time
 uint32_t vr = 0;                                 // time variable
+
 //---------------------------------------------------------------------------------------------------------
 void setup()
 {
@@ -67,7 +68,7 @@ void setup()
 }
 //---------------------------------------------------------------------------------------------------------
 void loop() {
-  if (millis() - vr > 500) {                      // time refresh (and digital points blink): every 0,5 sec
+  if (millis() - vr > 1000) {                      // time refresh (and digital points blink): every 0,5 sec
   show_time();
     tm1637.point(dp);
     dp = !dp;
@@ -105,6 +106,7 @@ void loop() {
 {
   if ((digitalRead(BTN_AlarmOff) == HIGH) && (AlarmAcknowledged == 0)) // Alarm tijd en uitknop is niet ingedrukt
     {
+      show_time();
       digitalWrite(buzzer, HIGH);
       digitalWrite(LED_GreenLedOnTop, HIGH);
       digitalWrite(LED_RedLedInButton, HIGH);
@@ -112,17 +114,37 @@ void loop() {
       digitalWrite(LED_GreenLedOnTop, LOW);
       digitalWrite(LED_RedLedInButton, LOW);
       delay(125);
+      tm1637.clearDisplay();
+//      display.setBrightness(7, false);  // Turn off
+      digitalWrite(LED_GreenLedOnTop, HIGH);
+      digitalWrite(LED_RedLedInButton, HIGH);
+      delay(125);
+      digitalWrite(LED_GreenLedOnTop, LOW);
+      digitalWrite(LED_RedLedInButton, LOW);
+      delay(125);      
     }
     else if ((digitalRead(BTN_AlarmOff) == LOW) && (AlarmAcknowledged == 0)) // Alarm tijd en uitknop wordt ingedrukt
     {
       AlarmAcknowledged = 1;
       digitalWrite(buzzer, LOW);
+
+      tm1637.display(0, h / 10);
+      tm1637.display(1, h % 10);
+      tm1637.display(2, m / 10);
+      tm1637.display(3, m % 10);
+      
       digitalWrite(LED_GreenLedOnTop, HIGH);
       digitalWrite(LED_RedLedInButton, HIGH);
       delay(125);
       digitalWrite(LED_GreenLedOnTop, LOW);
       digitalWrite(LED_RedLedInButton, LOW);
       delay(125);
+      digitalWrite(LED_GreenLedOnTop, HIGH);
+      digitalWrite(LED_RedLedInButton, HIGH);
+      delay(125);
+      digitalWrite(LED_GreenLedOnTop, LOW);
+      digitalWrite(LED_RedLedInButton, LOW);
+      delay(125);      
     }
     else // Alarm is uitschakeld maar nog wel alarm tijd
     {
@@ -132,6 +154,10 @@ void loop() {
       delay(125);
       digitalWrite(LED_GreenLedOnTop, LOW);
       delay(125);
+      digitalWrite(LED_GreenLedOnTop, HIGH);
+      delay(125);
+      digitalWrite(LED_GreenLedOnTop, LOW);
+      delay(125);      
     }
   } else { // Geen alarmtijd meer, alles netjes achterlaten
     digitalWrite(buzzer, LOW);
